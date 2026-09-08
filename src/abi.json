@@ -1,6 +1,12 @@
 [
   {
-    "inputs": [],
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_flatId",
+        "type": "uint256"
+      }
+    ],
     "name": "bookFlat",
     "outputs": [],
     "stateMutability": "payable",
@@ -8,35 +14,45 @@
   },
   {
     "inputs": [],
-    "name": "getAllFlats",
-    "outputs": [
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
       {
-        "components": [
-          {"internalType":"uint256","name":"id","type":"uint256"},
-          {"internalType":"string","name":"name","type":"string"},
-          {"internalType":"uint256","name":"price","type":"uint256"},
-          {"internalType":"bool","name":"booked","type":"bool"}
-        ],
-        "internalType":"struct FlatBooking.Flat[]",
-        "name":"flats",
-        "type":"tuple[]"
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "flatId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "buyer",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    "name": "FlatBooked",
+    "type": "event"
   },
   {
-    "inputs": [],
-    "name": "getContractBalance",
-    "outputs": [{"internalType":"uint256","name":"","type":"uint256"}],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "owner",
-    "outputs": [{"internalType":"address","name":"","type":"address"}],
-    "stateMutability": "view",
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_newPrice",
+        "type": "uint256"
+      }
+    ],
+    "name": "updateFlatPrice",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -48,24 +64,112 @@
   },
   {
     "inputs": [],
-    "name": "flats",
+    "name": "contractOwner",
     "outputs": [
-      {"internalType":"uint256","name":"id","type":"uint256"},
-      {"internalType":"string","name":"name","type":"string"},
-      {"internalType":"uint256","name":"price","type":"uint256"},
-      {"internalType":"bool","name":"booked","type":"bool"}
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "anonymous": false,
-    "inputs": [
-      {"indexed":true,"internalType":"uint256","name":"id","type":"uint256"},
-      {"indexed":true,"internalType":"address","name":"buyer","type":"address"},
-      {"indexed":false,"internalType":"uint256","name":"price","type":"uint256"}
+    "inputs": [],
+    "name": "flatPrice",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
-    "name": "FlatBooked",
-    "type": "event"
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "flats",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "flatId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "booked",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getContractBalance",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_flatId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getFlatDetails",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "TOTAL_FLATS",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
   }
 ]
