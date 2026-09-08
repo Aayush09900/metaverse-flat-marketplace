@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Metaverse Flat Marketplace — browse and book flats on Ethereum Sepolia.">
+  <title>Metaverse Flat Marketplace</title>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">◆</span><div><strong>MetaFlat</strong><small>Web3 Property Marketplace</small></div></div>
+    <div class="network-badge"><span></span> Sepolia Testnet</div>
+    <button id="connectWalletBtn" class="connect-btn">Connect MetaMask</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div><p class="eyebrow">ON-CHAIN PROPERTY MARKET</p><h1>Find your next<br><span>metaverse home.</span></h1><p>Explore on-chain flats and reserve an available property directly through your wallet.</p></div>
+      <div class="hero-stats"><div><strong id="flatCount">—</strong><span>Total flats</span></div><div><strong id="availableCount">—</strong><span>Available</span></div><div><strong id="contractBalance">—</strong><span>Escrowed ETH</span></div></div>
+    </section>
+
+    <section class="dashboard">
+      <div class="wallet-card"><span>CONNECTED WALLET</span><strong id="walletAddress">Not connected</strong><small id="walletBalance">— ETH</small></div>
+      <div class="wallet-card"><span>CONTRACT OWNER</span><strong id="contractOwner">Loading…</strong><small id="flatPrice">Flat price: — ETH</small></div>
+    </section>
+
+    <section class="market-header">
+      <div><p class="eyebrow">PROPERTY INVENTORY</p><h2>Available flats</h2></div>
+      <div class="controls"><input id="searchInput" type="search" placeholder="Search flat ID…"><select id="statusFilter"><option value="all">All properties</option><option value="available">Available</option><option value="booked">Booked</option></select><button id="refreshBtn" class="secondary-btn">Refresh</button></div>
+    </section>
+
+    <div id="statusMessage" class="status-message" role="status">Connect MetaMask to start.</div>
+    <section id="flatGrid" class="flat-grid"></section>
+
+    <section class="activity"><div class="section-heading"><div><p class="eyebrow">ON-CHAIN ACTIVITY</p><h2>Recent bookings</h2></div></div><div id="activityList" class="activity-list"><p class="muted">No booking events loaded yet.</p></div></section>
+  </main>
+
+  <div id="bookingModal" class="modal" hidden><div class="modal-card"><button id="closeModal" class="modal-close" aria-label="Close">×</button><p class="eyebrow">CONFIRM BOOKING</p><h2 id="modalTitle">Book flat</h2><p id="modalDescription">This will submit an on-chain transaction.</p><div class="booking-summary"><span>Price</span><strong id="modalPrice">— ETH</strong></div><button id="confirmBooking" class="primary-btn">Confirm with MetaMask</button><p id="modalStatus" class="modal-status"></p></div></div>
+
+  <script type="module" src="./index.js"></script>
+</body>
+</html>
