@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "dev": {
+      "name": "Development server",
+      "command": "npm start",
+      "runAtStart": true
+    }
+  }
+}
